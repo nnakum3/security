@@ -16,9 +16,11 @@ import com.security.repository.UserRepository;
 @RestController
 public class UserController
 {
-	
-	@Autowired
 	UserRepository r;
+	public UserController(UserRepository r) {
+		super();
+		this.r = r;
+	}
 	
 	@GetMapping("/")
 	public String home() {
